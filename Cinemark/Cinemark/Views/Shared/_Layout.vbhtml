@@ -4,35 +4,35 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
+    <title>@ViewBag.Title - CineMark</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nombre de la aplicación", "Index", "Home", New With { .area = "" }, New With { .class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                </ul>
-            </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        @Html.ActionLink("CineMark", "Index", "Home", New With {.area = ""}, New With {.class = "navbar-brand"})
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    @Html.ActionLink("Inicio", "Index", "Home", New With {.class = "nav-link"})
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Acerca de", "About", "Home", New With {.class = "nav-link"})
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Contacto", "Contact", "Home", New With {.class = "nav-link"})
+                </li>
+            </ul>
         </div>
-    </div>
+    </nav>
     <div class="container body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
+            <p class="text-center">&copy; @DateTime.Now.Year - Mi aplicación ASP.NET</p>
         </footer>
     </div>
 
